@@ -1,23 +1,23 @@
 import random
-lista_P=["lapis","arara"]
-lista_n=random.choice(lista_P)
+lista_Palavras=["lapis","arara","cartao","pincel","nobre","fazer","sutil","poder","honra","sonho"]
+lista_nomes=random.choice(lista_Palavras)
 tentativas=0
 chances=5
 letras_selecionas = []
-lista_visual=["_"] * len(lista_n)
+lista_visual=["_"] * len(lista_nomes)
 print("inico do game")
 print("as regras do jogo digite uma letra por vez")
 print("Você tem 5 chances depois disso o jogo acaba")
-while tentativas < chances and "".join(lista_visual) != lista_n:
+while tentativas < chances and "".join(lista_visual) != lista_nomes:
     letra=(input("\nDigite a primeiro letra?")).upper().lower()
     while letra in letras_selecionas:
         print(f"A letra escolhida já foi tentada")
         letra = (input("\nDigite a primeiro letra?")).upper().lower()
         letras_selecionas.append(letra)
-    if letra in lista_n :
+    if letra in lista_nomes :
         print(f"A letra {letra} se encontra na dentro do jogo")
-        for verificar in range(len(lista_n)):
-            if letra == lista_n[verificar]:
+        for verificar in range(len(lista_nomes)):
+            if letra == lista_nomes[verificar]:
                 lista_visual[verificar] = letra
                 print(lista_visual)
     else:
@@ -40,4 +40,4 @@ if tentativas == chances:
     print(f"\nGame over")
 else:
     print(f"\nVoce acertou a palavra BOM JOGO")
-    print(f"\nA palavra era {lista_n}")
+    print(f"\nA palavra era {lista_nomes}")
